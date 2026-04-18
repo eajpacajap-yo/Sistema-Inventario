@@ -18,12 +18,12 @@ public class Empleado {
     private String departamento;
     private String correo;
 
-    // Se recomienda inicializar la lista para evitar errores de puntero nulo
+    //inicializar la lista para evitar errores de puntero nulo
     @OneToMany(mappedBy = "empleado", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
 private List<Asignacion> asignaciones = new ArrayList<>();
 
-    // --- CONSTRUCTORES ---
+    //CONSTRUCTORES
 
     public Empleado() {
     }
