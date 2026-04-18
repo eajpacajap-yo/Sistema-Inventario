@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="card">
+        <h1>Gestión de Empleados</h1>
+        
+        <div class="form">
+            <input type="text" id="emp-nombre" placeholder="Nombre completo">
+            <input type="text" id="emp-depto" placeholder="Departamento">
+            <button class="btn btn-add" onclick="guardar()">Registrar</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Departamento</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="lista-empleados">
+                </tbody>
+        </table>
+    </div>
+
+    <script src="../js/empleados.js"></script>
+</body>
+</html> 

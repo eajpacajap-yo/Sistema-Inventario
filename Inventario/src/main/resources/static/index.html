@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventario Pro | Sistema Central</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .layout { display: flex; height: 100vh; }
+        .sidebar { 
+            width: 250px; 
+            background: var(--primary); 
+            color: white; 
+            padding-top: 20px;
+        }
+        .sidebar h2 { text-align: center; font-size: 1.2rem; margin-bottom: 30px; }
+        .menu-item {
+            padding: 15px 25px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .menu-item:hover { background: var(--accent); }
+        .content { flex-grow: 1; border: none; }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <nav class="sidebar">
+            <h2>INVENTARIO</h2>
+            <a href="vistas/empleados.html" target="visor" class="menu-item">👥 Empleados</a>
+            <a href="vistas/proveedores.html" target="visor" class="menu-item">🚚 Proveedores</a>
+            <a href="vistas/activos.html" target="visor" class="menu-item">💻 Activos</a>
+            <a href="vistas/facturas.html" target="visor" class="menu-item">📄 Facturas</a>
+            <a href="vistas/asignaciones.html" target="visor" class="menu-item">🔗 Asignaciones</a>
+        </nav>
+        
+        <iframe name="visor" class="content" src="about:blank"></iframe>
+    </div>
+</body>
+</html>

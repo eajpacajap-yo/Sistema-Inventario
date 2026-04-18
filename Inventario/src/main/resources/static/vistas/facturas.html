@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="card">
+        <h1>📄 Registro de Facturas</h1>
+        <div class="form">
+            <input type="text" id="fac-numero" placeholder="Número de Factura">
+            <input type="date" id="fac-fecha">
+            <select id="fac-proveedor">
+                <option value="">Seleccione Proveedor</option>
+            </select>
+            <button class="btn btn-add" onclick="guardar()">Cargar Factura</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Número</th>
+                    <th>Fecha</th>
+                    <th>Proveedor</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="lista-facturas"></tbody>
+        </table>
+    </div>
+    <script src="../js/facturas.js"></script>
+</body>
+</html>

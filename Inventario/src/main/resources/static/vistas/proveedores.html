@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="card">
+        <h1>🚚 Gestión de Proveedores</h1>
+        <div class="form">
+            <input type="text" id="prov-nombre" placeholder="Nombre de la Empresa">
+            <input type="text" id="prov-contacto" placeholder="Teléfono/Email">
+            <button class="btn btn-add" onclick="guardar()">Registrar Proveedor</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Contacto</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="lista-proveedores"></tbody>
+        </table>
+    </div>
+    <script src="../js/proveedores.js"></script>
+</body>
+</html>

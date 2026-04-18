@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="card">
+        <h1>💻 Inventario de Activos</h1>
+        <div class="form">
+            <input type="text" id="act-sku" placeholder="Código SKU">
+            <input type="text" id="act-nombre" placeholder="Nombre del Equipo">
+            <input type="number" id="act-valor" placeholder="Valor Compra">
+            <select id="act-estado">
+                <option value="Disponible">Disponible</option>
+                <option value="Asignado">Asignado</option>
+                <option value="Baja">Baja</option>
+            </select>
+            <button class="btn btn-add" onclick="guardar()">Añadir Activo</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>SKU</th>
+                    <th>Nombre</th>
+                    <th>Valor</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="lista-activos"></tbody>
+        </table>
+    </div>
+    <script src="../js/activos.js"></script>
+</body>
+</html>

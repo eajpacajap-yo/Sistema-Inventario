@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="card">
+        <h1>🔗 Asignación de Equipos</h1>
+        <div class="form">
+            <select id="asig-empleado"><option value="">Seleccione Empleado</option></select>
+            <select id="asig-activo"><option value="">Seleccione Activo</option></select>
+            <input type="date" id="asig-fecha" title="Fecha de Asignación">
+            <input type="text" id="asig-obs" placeholder="Observaciones">
+            <button class="btn btn-add" onclick="guardar()">Crear Asignación</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Empleado</th>
+                    <th>Activo (SKU)</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="lista-asignaciones"></tbody>
+        </table>
+    </div>
+    <script src="../js/asignaciones.js"></script>
+</body>
+</html>
