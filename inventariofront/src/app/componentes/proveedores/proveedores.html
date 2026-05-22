@@ -1,0 +1,112 @@
+<div class="container mt-4">
+
+  <h2 class="mb-4">Gestión de Proveedores</h2>
+
+  <!-- FORMULARIO -->
+  <div class="card p-4 mb-4 shadow-sm border-primary">
+
+    <div class="row g-4 align-items-end">
+
+      <div class="col-md-5">
+        <label class="form-label fw-bold">Nombre de la Empresa</label>
+        <input [(ngModel)]="nuevoProv.nombre"
+          class="form-control"
+          placeholder="Ej: Distribuidora XYZ">
+      </div>
+
+      <div class="col-md-5">
+        <label class="form-label fw-bold">NIT</label>
+        <input [(ngModel)]="nuevoProv.nit"
+          class="form-control"
+          placeholder="Ej: 1234567-8">
+      </div>
+
+      <div class="col-md-5">
+        <label class="form-label fw-bold">Teléfono</label>
+        <input [(ngModel)]="nuevoProv.telefono"
+          class="form-control"
+          placeholder="Ej: 5555-5555">
+      </div>
+
+      <div class="col-md-2 d-grid">
+        <button (click)="guardar()"
+          class="btn"
+          [ngClass]="editandoId ? 'btn-warning' : 'btn-success'">
+          {{ editandoId ? 'Actualizar' : 'Registrar' }}
+        </button>
+      </div>
+
+    </div>
+
+    <!-- BOTÓN CANCELAR -->
+    <div class="mt-2 text-end">
+      <button *ngIf="editandoId"
+        (click)="limpiarYRefrescar()"
+        class="btn btn-outline-secondary btn-sm">
+        Cancelar edición
+      </button>
+    </div>
+
+  </div>
+
+  <!-- BUSCADOR -->
+  <div class="input-group mb-3 shadow-sm">
+    <span class="input-group-text"></span>
+    <input type="text"
+      [(ngModel)]="textoBusqueda"
+      placeholder="Buscar proveedor..."
+      class="form-control">
+  </div>
+
+  <!-- TABLA -->
+  <div class="table-responsive shadow-sm">
+    <table class="table table-hover align-middle bg-white border">
+
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Empresa</th>
+          <th>NIT</th>
+          <th>Teléfono</th>
+          <th class="text-center">Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let p of filtrarProveedores()">
+
+          <td>{{ p.id }}</td>
+
+          <td class="fw-semibold text-primary">
+            {{ p.nombre }}
+          </td>
+
+          <td>
+            <span class="badge bg-secondary">
+              {{ p.nit }}
+            </span>
+          </td>
+
+          <td>
+             {{ p.telefono }}
+          </td>
+
+          <td class="text-center">
+            <button (click)="prepararEdicion(p)"
+              class="btn btn-sm btn-outline-primary me-1">
+              Editar
+            </button>
+
+            <button (click)="eliminar(p.id)"
+              class="btn btn-sm btn-outline-danger">
+              Eliminar
+            </button>
+          </td>
+
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+</div>

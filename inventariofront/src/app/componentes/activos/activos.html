@@ -1,0 +1,119 @@
+<div class="container mt-4">
+  <h2 class="mb-4"> Gestión de Activos</h2>
+
+  <div class="card p-4 mb-4 shadow-sm border-primary">
+  
+   <!-- FILA 1 -->
+  <div class="row g-3">
+
+    <div class="col-md-5">
+      <label class="form-label fw-bold">Código SKU</label>
+      <input [(ngModel)]="nuevoActivo.codigoSku" class="form-control">
+    </div>
+
+    <div class="col-md-5">
+      <label class="form-label fw-bold">Nombre</label>
+      <input [(ngModel)]="nuevoActivo.nombre" class="form-control">
+    </div>
+
+    <div class="col-md-5">
+      <label class="form-label fw-bold">Estado</label>
+      <select [(ngModel)]="nuevoActivo.estado" class="form-select">
+        <option>Disponible</option>
+        <option>Asignado</option>
+        <option>Baja</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- FILA 2 -->
+  <div class="row g-3 mt-2">
+
+    <div class="col-md-5">
+      <label class="form-label fw-bold">Descripción</label>
+      <input [(ngModel)]="nuevoActivo.descripcion" class="form-control">
+    </div>
+
+    <div class="col-md-5">
+      <label class="form-label fw-bold">Valor</label>
+      <div class="input-group">
+        <span class="input-group-text">Q</span>
+        <input type="number"
+          [(ngModel)]="nuevoActivo.valorCompra"
+          class="form-control">
+      </div>
+    </div>
+
+    <div class="col-md-5">
+      <label class="form-label fw-bold">Fecha</label>
+      <input type="date"
+        [(ngModel)]="nuevoActivo.fechaAdquisicion"
+        class="form-control">
+    </div>
+
+    <div class="col-md-5">
+      <label class="form-label fw-bold">Vida útil</label>
+      <input type="number"
+        [(ngModel)]="nuevoActivo.vidaUtilAnios"
+        class="form-control">
+    </div>
+
+  </div>
+
+  <!-- BOTÓN -->
+  <div class="text-end mt-3">
+    <button (click)="guardar()"
+      class="btn btn-success">
+      Registrar
+    </button>
+  </div>
+
+</div>
+
+      
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text bg-white"></span>
+    <input type="text" [(ngModel)]="textoBusqueda" placeholder="Buscar..." class="form-control">
+  </div>
+
+  <div class="table-responsive shadow-sm">
+    <table class="table table-hover align-middle bg-white">
+      <thead class="table-dark">
+        <tr>
+          <th>SKU</th>
+          <th>Nombre / Descripción</th>
+          <th>Valor</th>
+          <th>Estado</th>
+          <th>Adquisición</th>
+          <th>Vida Útil</th>
+          <th class="text-center">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of filtrarActivos()">
+          <td><strong class="text-primary">{{ a.codigoSku }}</strong></td>
+          <td>
+            <div>{{ a.nombre }}</div>
+            <small class="text-muted">{{ a.descripcion }}</small>
+          </td>
+          <td>{{ a.valorCompra | currency:'GTQ':'symbol':'1.2-2' }}</td>
+          <td>
+            <span class="badge" [ngClass]="{
+              'bg-success': a.estado === 'Disponible',
+              'bg-primary': a.estado === 'Asignado',
+              'bg-danger': a.estado === 'Baja'
+            }">{{ a.estado }}</span>
+          </td>
+          <td>{{ a.fechaAdquisicion }}</td>
+          <td>{{ a.vidaUtilAnios }} años</td>
+          <td class="text-center">
+            <button (click)="prepararEdicion(a)" class="btn btn-sm btn-outline-primary me-1">Editar</button>
+            <button (click)="eliminar(a.id)" class="btn btn-sm btn-outline-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

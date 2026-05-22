@@ -1,0 +1,107 @@
+/* --- ESTILOS EXCLUSIVOS DEL LOGIN --- */
+
+/* Contenedor que centra todo en pantalla completa */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f4f6f9; /* Un fondo gris claro muy sutil */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; /* Asegura que cubra el menú si llega a asomarse por error */
+}
+
+/* La tarjeta del formulario */
+.login-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Títulos del Login */
+.login-title {
+  color: #212529;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.login-subtitle {
+  color: #6c757d;
+  font-size: 15px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Bloques de los inputs */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 8px;
+}
+
+/* Inputs bonitos y estilizados */
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: #fff;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  box-sizing: border-box;
+}
+
+/* Efecto azul al hacer clic en el input */
+.form-group input:focus {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Botón de ingreso moderno estilo Bootstrap Dark/Blue */
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #212529; /* Color oscuro a juego con tu sidebar */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 10px;
+}
+
+.btn-login:hover {
+  background-color: #343a40;
+}
+
+/* Mensaje de error */
+.error-msg {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c2c7;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+}

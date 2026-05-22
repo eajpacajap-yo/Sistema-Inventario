@@ -1,0 +1,12 @@
+.buscador-container {
+    margin-bottom: 20px;
+}
+
+.input-busqueda {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
