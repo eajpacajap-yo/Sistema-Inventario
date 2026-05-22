@@ -36,6 +36,7 @@ public class EmpleadoController {
         return empleadoRepository.findById(id).map(emp -> {
             emp.setNombre(detalles.getNombre());
             emp.setDepartamento(detalles.getDepartamento());
+            emp.setCorreo(detalles.getCorreo());
             return new ResponseEntity<>(empleadoRepository.save(emp), HttpStatus.OK);
         }).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
