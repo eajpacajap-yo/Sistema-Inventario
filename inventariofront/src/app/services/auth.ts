@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  // Mientras probamos en local, usamos localhost:8080
-  private apiUrl = 'http://localhost:8081/api/auth/login';
+
+  private apiUrl = 'https://sistema-inventariobienes.onrender.com/api/auth/login';
 
   constructor(private http: HttpClient) { }
 
